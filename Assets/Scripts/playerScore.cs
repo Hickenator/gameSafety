@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class playerScore : MonoBehaviour {
 
@@ -12,6 +13,9 @@ public class playerScore : MonoBehaviour {
     public AudioSource collectionSound;
 
     public AudioSource playerSource;
+
+    public Canvas mainUI;
+    public Text scoreText;
 
     void Start()
     {
@@ -26,6 +30,7 @@ public class playerScore : MonoBehaviour {
             collectionSound.loop = false;
             collectionSound.Play();
             score++;
+            scoreText.text = "" + score;
             print(score);
         }
     }
